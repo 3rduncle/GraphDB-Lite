@@ -1,16 +1,16 @@
 #ifndef MINI_PYTHON_STRUCT_ANY_H
 #define MINI_PYTHON_STRUCT_ANY_H
 
+#include <typeinfo>
 #include <string>
 #include <vector>
-#include <iostream>
-#include <typeinfo>
 #include <functional>
 #include <unordered_map>
 #include <memory> // make_shared
 #include <boost/lexical_cast.hpp>
 #include <boost/algorithm/string.hpp>
 #include "type_object.h"
+#include <iostream>
 
 namespace ipython {
 
