@@ -1,0 +1,7 @@
+cmake_minimum_required(VERSION 3.2)
+project(mini-python)
+find_package(boost REQUIRED)
+aux_source_directory(. DIR_LIB_SRCS)
+#set(CMAKE_CXX_FLAGS "-stdlib=libstdc++ -std=c++11 -Wno-c++11-extensions")
+set(CMAKE_CXX_FLAGS "-stdlib=libc++ -std=c++11")
+add_library (struct ${DIR_LIB_SRCS})
