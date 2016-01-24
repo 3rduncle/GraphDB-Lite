@@ -1,6 +1,7 @@
 #include "struct.h"
 
-namespace ipython {
+namespace egdb {
+namespace detail {
 
 typedef GeneralObject<std::string> StringObject;
 typedef std::shared_ptr<StringObject> StringPtr;
@@ -17,4 +18,5 @@ StringType::StringType() {
     tp_logic.great = GreatHelper<std::string>();
 }
 
+}
 }

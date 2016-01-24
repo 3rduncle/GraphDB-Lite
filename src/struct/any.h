@@ -1,18 +1,19 @@
 #ifndef MINI_PYTHON_STRUCT_ANY_H
 #define MINI_PYTHON_STRUCT_ANY_H
 
-#include <typeinfo>
+#include <memory> // make_shared
 #include <string>
 #include <vector>
+#include <iostream>
+#include <typeinfo>
 #include <functional>
 #include <unordered_map>
-#include <memory> // make_shared
 #include <boost/lexical_cast.hpp>
 #include <boost/algorithm/string.hpp>
 #include "type_object.h"
-#include <iostream>
 
-namespace ipython {
+namespace egdb {
+namespace detail {
 
 class any {
 public:
@@ -44,8 +45,10 @@ public:
 
     ObjectPtr get_content() const;
 
+	/*
     template<typename ValueType>
     bool operator==(const ValueType& rhs);
+	*/
 
     bool operator!() const;
     const std::type_info& type() const;
@@ -164,14 +167,18 @@ inline bool any::operator==(const ValueType& rhs) {
 
 bool is_numeric_datanode(const any& dn);
 
-} //namespace ipython
+} //namespace detail
+
+using detail::any;
+
+} //namespace egdb
 
 namespace std {
 
 template<>
-class hash<ipython::any> {
+class hash<egdb::any> {
 public:
-    size_t operator()(const ipython::any& l) const {
+    size_t operator()(const egdb::any& l) const {
         return l.get_content()->_ob_type->tp_hash(l);
     }
 };

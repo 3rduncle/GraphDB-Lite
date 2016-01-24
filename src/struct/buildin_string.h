@@ -3,11 +3,13 @@
 
 #include "type_object.h"
 
-namespace ipython {
+namespace egdb {
+namespace detail {
 
 struct StringType : public TypeObject {
     StringType();
 };
 
+}
 }
 #endif

@@ -1,8 +1,8 @@
 #include <algorithm>
-#include <boost/foreach.hpp>
 #include "struct.h"
 
-namespace ipython {
+namespace egdb {
+namespace detail {
 
 RunTimeOperatorManeger* RunTimeOperatorManeger::_s_instance =
     RunTimeOperatorManeger::get_instance();
@@ -78,7 +78,7 @@ bool operator==(const any& lhs, const any& rhs) {
 		return false;
 	}
 	if (lhs.get_content()->_ob_type->tp_logic.equal) {
-		auto res = lhs.get_content()->_ob_type->tp_logic.less(lhs, rhs);
+		auto res = lhs.get_content()->_ob_type->tp_logic.equal(lhs, rhs);
 		return any_cast<bool>(res);
 	}
 	return false;
@@ -182,4 +182,5 @@ bool any::get_value<double>(double& val) const {
     return false;
 }
 
-}//namespace kg_compute
+}//namespace any
+}//namespace egdb

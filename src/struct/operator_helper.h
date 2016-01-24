@@ -8,7 +8,8 @@
 #include "type_object.h"
 #include "any.h"
 
-namespace ipython {
+namespace egdb {
+namespace detail {
 
 class MultiTypeBinaryFunc {
 public:
@@ -170,5 +171,6 @@ struct HashHelper {
     }
 };
 
+}
 }
 #endif

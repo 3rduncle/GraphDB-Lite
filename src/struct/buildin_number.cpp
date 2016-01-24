@@ -1,6 +1,7 @@
 #include "struct.h"
 
-namespace ipython {
+namespace egdb {
+namespace detail {
 
 typedef GeneralObject<int> IntObject;
 typedef std::shared_ptr<IntObject> IntPtr;
@@ -129,4 +130,5 @@ DoubleType::DoubleType() {
     tp_as_number.nb_div = NumberDiv();
 }
 
+}
 }

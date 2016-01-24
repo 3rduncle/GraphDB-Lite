@@ -5,7 +5,8 @@
 #include <functional>
 #include <memory>
 
-namespace ipython {
+namespace egdb {
+namespace detail {
 
 class Object;
 class any;
@@ -55,5 +56,6 @@ struct TypeObject {
     MappingMethods tp_as_mapping;
 };
 
+}
 }
 #endif

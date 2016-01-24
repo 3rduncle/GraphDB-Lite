@@ -4,7 +4,8 @@
 #include <boost/algorithm/string.hpp>
 #include "struct.h"
 
-namespace ipython {
+namespace egdb {
+namespace detail {
 
 typedef std::vector<any> List;
 typedef GeneralObject<List> ListObject;
@@ -43,4 +44,5 @@ ListType::ListType() {
     tp_as_number.nb_add = ListAdd();
 }
 
+}
 }

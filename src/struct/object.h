@@ -6,7 +6,8 @@
 #include "type_object.h"
 #include "operator_maneger.h"
 
-namespace ipython {
+namespace egdb {
+namespace detail {
 
 //--------------操作跟值的管理-----------------------
 class Object {
@@ -36,5 +37,6 @@ public:
     ValueType _core;
 };
 
+}
 }
 #endif

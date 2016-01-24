@@ -3,7 +3,8 @@
 #include <unordered_map>
 #include "type_object.h"
 
-namespace ipython {
+namespace egdb {
+namespace detail {
 
 //--------------类型操作跟类型值绑定------------------------
 class RunTimeOperatorManeger {
@@ -18,5 +19,6 @@ private:
     std::unordered_map<std::string, TypeObject*> _operators;
 };
 
+}
 }
 #endif

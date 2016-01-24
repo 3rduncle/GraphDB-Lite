@@ -5,7 +5,8 @@
 #include <unordered_map>
 #include "struct.h"
 
-namespace ipython {
+namespace egdb {
+namespace detail {
 
 typedef std::unordered_map<any, any> Dict;
 typedef std::pair<any, any> AnyPair;
@@ -34,4 +35,5 @@ DictType::DictType() {
     tp_print = DictPrint();
 }
 
+}
 }

@@ -4,7 +4,8 @@
 #include "type_object.h"
 #include "operator_helper.h"
 
-namespace ipython {
+namespace egdb {
+namespace detail {
 
 const double EPS = 1e-8;
 /**********************/
@@ -44,5 +45,6 @@ struct DoubleType : public TypeObject {
     DoubleType();
 };
 
+}
 }
 #endif

@@ -1,6 +1,7 @@
 #include "struct.h"
 
-namespace ipython {
+namespace egdb {
+namespace detail {
 
 BooleanType::BooleanType() {
     tp_print = PrintHelper<bool>();
@@ -8,4 +9,5 @@ BooleanType::BooleanType() {
     tp_hash = HashHelper<bool>();
 }
 
+}
 }

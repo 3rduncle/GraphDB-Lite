@@ -1,6 +1,7 @@
 #include "struct.h"
 
-namespace ipython {
+namespace egdb {
+namespace detail {
 
 typedef GeneralObject<int> IntObject;
 typedef std::shared_ptr<IntObject> IntPtr;
@@ -49,4 +50,5 @@ void RunTimeOperatorManeger::register_operator(const std::string& key, TypeObjec
     _operators[key] = op;
 }
 
-}
+}//namespace detail
+}//namespace egdb
