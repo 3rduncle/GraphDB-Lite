@@ -1,4 +1,5 @@
 #include <tuple> // for tie
+#include <exception>
 #include <algorithm> // for for_each
 #include <boost/regex.hpp>
 #include <boost/format.hpp>
@@ -19,7 +20,7 @@ std::string rapidjson_to_string(const rapidjson::Value& doc) {
 	return strBuf.GetString();
 }
 
-any ConvertToAny(const rapidjson::Value& j) {
+any ConvertToAny(const rapidjson::Value& j) throw (std::logic_error) {
 	if (j.IsString()) {
 		return j.GetString();
 	} else if (j.IsDouble()) {
@@ -29,7 +30,9 @@ any ConvertToAny(const rapidjson::Value& j) {
 	} else if (j.IsBool()) {
 		return j.GetBool();
 	} else {
-		return any(0);
+		boost::format fmt("UnKnow Type [%d]");
+		fmt % j.GetType();
+		throw std::logic_error(fmt.str());
 	}
 }
 
